@@ -29,7 +29,7 @@ Edit `~/.config/rotify/config.yml`.
 
 ## Usage 
 ```
-rofi -show checknotifs -modi checknotifs:.../rotify/checknotifs.py #Check notifications
+rofi -show checknotifs -modi checknotifs:.../rotify/checknotifs.py  #Check notifications
 
-rofi -show notify -modi checknotifs:.../rotify/notify.py #Send notification
+rofi -show notify -modi notify:.../rotify/notify.py                 #Send notification
 ```
