@@ -1,0 +1,8 @@
+gotify:
+  url: "http://gotify.host"	#Gotify URL
+  tokens:
+    client: "CL13nt70k3N"  	#Gotify client token, to receive messages
+    app: "A9970kEn"					#Gotify app token, to send messages
+sender:
+	priority: 6								#Gotify notification priority
+	title: "Title"						#Notification title
