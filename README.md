@@ -44,8 +44,3 @@ I'm using [Powertoys Run](https://docs.microsoft.com/en-gb/windows/powertoys/run
 - Clone scripts, add them to PATH and reboot (PToys Run uses the Windows indexer and rebooting is the easiest way to make sure the indexes are up to date)
 - Update the script shebangs to `#!python` to get them working on Windows, point them to the new config path
 - Remove all the nice `xdg-open` and `xclip` stuff from `checknotifs.py`, since that won't work on Windows and make sure it waits for user input before exiting, the script runs outside the launcher in a termimnal window
-```
-rofi -show checknotifs -modi checknotifs:.../rotify/checknotifs.py  #Check notifications
-
-rofi -show notify -modi notify:.../rotify/notify.py                 #Send notification
-```
