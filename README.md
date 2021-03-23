@@ -42,7 +42,7 @@ rofi -show checknotifs -modi checknotifs:.../rotify/checknotifs.py  #Check notif
 ```
 ### notify
 ```
-usage: notify.py [-h] [-c CONFIG] [message ...]
+usage: notify [-h] [-c CONFIG] [-t TITLE] [-p PRIORITY] [message ...]
 
 Send notifications via Gotify
 
@@ -53,6 +53,10 @@ optional arguments:
   -h, --help            show this help message and exit
   -c CONFIG, --config CONFIG
                         specify a config file (default: ~/.config/rotify/config.yml)
+  -t TITLE, --title TITLE
+                        specify title (default: from config file, see --config)
+  -p PRIORITY, --priority PRIORITY
+                        specify priority (default: from config file, see --config)
 ```
 ### checknotifs
 ```
