@@ -18,8 +18,7 @@ parser.add_argument('-p', '--priority', action='store', default=None,
 
 args = parser.parse_args()
 
-config_file = args.config
-config = yaml.full_load(open(os.path.expanduser(config_file)))
+config = yaml.full_load(open(os.path.expanduser(args.config)))
 gotify_url = config['gotify']['url']
 app_token = config['gotify']['tokens']['app']
 title = config['sender']['title'] if args.title == None else args.title
