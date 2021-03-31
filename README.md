@@ -60,7 +60,7 @@ optional arguments:
 ```
 ### checknotifs
 ```
-usage: checknotifs.py [-h] [-c CONFIG] [message ...]
+usage: checknotifs.py [-h] [-c CONFIG] [-r] [message ...]
 
 Check Gotify notifications
 
@@ -71,8 +71,9 @@ optional arguments:
   -h, --help            show this help message and exit
   -c CONFIG, --config CONFIG
                         specify a config file (default: ~/.config/rotify/config.yml)
+  -r, --remove          Remove all messages. Pass message "!r" for the same effect
 ```
-There's also a handy wrapper, `rotify.sh`, which you can use to call checknotifs and notify, the latter with or without rofi (without rofi, it gets the current selection using xsel and sends it to Gotify)
+There's also a handy wrapper, `rotify.sh`, which you can use to call checknotifs and notify, with or without rofi
 ```
 rotify - send/read Gotify notifications
  
@@ -82,6 +83,7 @@ options:
 -c        config path [default ~/.config/rotify/config.yml]
 -s        send notification via rofi
 -r        read notifications via rofi
+-d        delete all notifications without rofi
 -i        send selected text without rofi
 -h        show this help
 ```

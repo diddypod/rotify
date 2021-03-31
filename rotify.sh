@@ -5,6 +5,7 @@ package="rotify"
 config="~/.config/rotify/config.yml"
 immediate=0
 sender=0
+delete=0
 
 print_help() {
     echo "$package - send/read Gotify notifications"
@@ -15,6 +16,7 @@ print_help() {
     echo "-c        config path [default ~/.config/rotify/config.yml]"
     echo "-s        send notification via rofi"
     echo "-r        read notifications via rofi"
+    echo "-d        delete all notifications without rofi"
     echo "-i        send selected text without rofi"
     echo "-h        show this help"
     exit 1
@@ -25,7 +27,7 @@ then
     print_help
 fi
 
-while getopts 'c:srih' OPTION; do
+while getopts 'c:srdih' OPTION; do
     case "$OPTION" in
         c)
             config=$OPTARG;
@@ -35,6 +37,9 @@ while getopts 'c:srih' OPTION; do
         ;;
         r)
             sender=0;
+        ;;
+        d)
+            delete=1;
         ;;
         i)
             immediate=1;
@@ -50,6 +55,10 @@ shift "$(($OPTIND -1))"
 if [ $immediate -eq 1 ]; then
     message="`xsel`"
     exec ~/scripts/notify -c "$config" "$message"
+fi
+
+if [ $delete -eq 1 ]; then
+    exec ~/scripts/checknotifs -c "$config" -r
 fi
 
 if [ $sender -eq 1 ]; then
