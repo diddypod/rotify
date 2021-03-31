@@ -1,7 +1,7 @@
 # rotify
 
 ## Description
-Send and view [Gotify](https://gotify.net) messages
+Send and view [Gotify](https://gotify.net) messages via rofi
 
 ## Features
 ### notify
